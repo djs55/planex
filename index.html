@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Planex by xenserver</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Planex</h1>
+        <p>RPM package and delivery</p>
+
+        <p class="view"><a href="https://github.com/xenserver/planex">View the Project on GitHub <small>xenserver/planex</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/xenserver/planex/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/xenserver/planex/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/xenserver/planex">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="planex" class="anchor" href="#planex" aria-hidden="true"><span class="octicon octicon-link"></span></a>Planex</h1>
+
+<p>Scripts and libraries to build rpms</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>This is an example run to demonstrate how you can build the software specified
+in the planex-demo subdirectory</p>
+
+<ul>
+<li>Change directory to planex-demo</li>
+</ul>
+
+<div class="highlight highlight-bash"><pre><span class="pl-s3">cd</span> planex-demo</pre></div>
+
+<ul>
+<li>Clone the repositories specified in the spec files</li>
+</ul>
+
+<div class="highlight highlight-bash"><pre>planex-clone</pre></div>
+
+<ul>
+<li>Configure</li>
+</ul>
+
+<div class="highlight highlight-bash"><pre>planex-configure</pre></div>
+
+<ul>
+<li>Build</li>
+</ul>
+
+<div class="highlight highlight-bash"><pre>make</pre></div>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<h4>
+<a id="ubuntu-1404" class="anchor" href="#ubuntu-1404" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ubuntu 14.04</h4>
+
+<div class="highlight highlight-bash"><pre>sudo apt-get -qy install python-rpm rpm</pre></div>
+
+<h4>
+<a id="centos-6" class="anchor" href="#centos-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>CentOS 6</h4>
+
+<ul>
+<li>Basic dependencies:</li>
+</ul>
+
+<div class="highlight highlight-bash"><pre>wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -Uvh epel-release-6-8.noarch.rpm
+yum -y install git rpm-python rpm-build mock</pre></div>
+
+<ul>
+<li>Pip:</li>
+</ul>
+
+<div class="highlight highlight-bash"><pre>wget --no-check-certificate https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+python get-pip.py
+pip install virtualenv
+virtualenv --system-site-packages env
+<span class="pl-s3">.</span> env/bin/activate
+pip install -r requirements.txt</pre></div>
+
+<h3>
+<a id="planex-1" class="anchor" href="#planex-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Planex</h3>
+
+<p>To install PlanEx, clone this repository and run the following:</p>
+
+<div class="highlight highlight-bash"><pre>sudo python setup.py install</pre></div>
+
+<p>This will install the planex binaries:</p>
+
+<ul>
+<li><code>planex-configure</code></li>
+<li><code>planex-build</code></li>
+<li><code>planex-clone</code></li>
+<li><code>planex-specdep</code></li>
+<li>and a few others</li>
+</ul>
+
+<h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>To run unit tests, use <code>tox</code>:</p>
+
+<div class="highlight highlight-bash"><pre>$ tox</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/xenserver">xenserver</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
